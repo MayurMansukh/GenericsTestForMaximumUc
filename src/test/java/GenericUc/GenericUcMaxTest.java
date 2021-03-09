@@ -27,4 +27,21 @@ public class GenericUcMaxTest {
         int result = MaxN.getIntegerMaximum(10,20,30);
         Assert.assertEquals(30,result);
     }
+    @Test
+    public void given_MaxDoubleat_FirstPosition_Returns_True_Test() {
+        double result = MaxN.getDoubleMaximum(30.0,20.0,10.0);
+        Assert.assertEquals(30.0, result, 0.001);
+    }
+
+    @Test
+    public void given_MaxDoubleat_SecondPosition_Returns_True_Test() {
+        double result = MaxN.getDoubleMaximum(20.0,30.0,10.0);
+        Assert.assertEquals(30.0, result,0.001);
+    }
+
+    @Test
+    public void given_MaxDoubleat_ThirdPosition_Returns_True_Test() {
+        double result = MaxN.getDoubleMaximum(10.0,20.0,30.0);
+        Assert.assertEquals(30.0,result,0.001);
+    }
 }
