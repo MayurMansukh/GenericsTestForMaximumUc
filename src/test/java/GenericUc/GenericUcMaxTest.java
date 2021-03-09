@@ -44,4 +44,21 @@ public class GenericUcMaxTest {
         double result = MaxN.getDoubleMaximum(10.0,20.0,30.0);
         Assert.assertEquals(30.0,result,0.001);
     }
+    @Test
+    public void given_MaxStringat_FirstPosition_Returns_True_Test() {
+        String result = MaxN.getStringMaximum("Peach", "Banana", "Apple");
+        Assert.assertEquals("Peach", result);
+    }
+
+    @Test
+    public void given_MaxStringat_SecondPosition_Returns_True_Test() {
+        String result = MaxN.getStringMaximum("Apple","Peach","Banana");
+        Assert.assertEquals("Peach", result);
+    }
+
+    @Test
+    public void given_MaxStringat_ThirdPosition_Returns_True_Test() {
+        String result = MaxN.getStringMaximum("Apple", "Peach", "banana");
+        Assert.assertEquals("banana", result);
+    }
 }
