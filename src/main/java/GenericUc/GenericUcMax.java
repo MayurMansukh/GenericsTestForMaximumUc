@@ -20,9 +20,3 @@ public class GenericUcMax {
     }
 
 
-    public static void main(String[] args) {
-        GenericUcMax obj=new GenericUcMax();
-        obj.getDoubleMaximum(10.0,20.0,30.0);
-
-    }
-}
