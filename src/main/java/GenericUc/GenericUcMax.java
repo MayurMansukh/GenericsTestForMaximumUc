@@ -1,26 +1,23 @@
 package GenericUc;
-public class GenericUcMax<G extends Comparable<G>> {
+import java.util.Arrays;
 
-    G P, Q, R;
+public class GenericUcMax<T extends Comparable<T>> {
 
-    public GenericUcMax(G P,G Q,G R) {
-        this.P = P;
-        this.Q = Q;
-        this.R = R;
-    }
-    public G maximum()
+    T [] items;
+
+
+    @SafeVarargs
+    public GenericUcMax(T...items)
     {
-        return GenericUcMax.getMaximum(P,Q,R);
+        this.items=items;
+    }
+
+    public <T extends Comparable<T>> T maximum()
+    {
+        Arrays.sort(items);
+        return (T) items[items.length-1];
     }
 
 
-    public static <G extends Comparable<G>> G getMaximum(G P, G Q, G R) {
-        if (P.compareTo(Q) > 0 && P.compareTo(R) > 0)
-            return P;
-        else if (Q.compareTo(R) > 0 && Q.compareTo(P) > 0)
-            return Q;
-        else
-            return R;
-    }
 }
 
